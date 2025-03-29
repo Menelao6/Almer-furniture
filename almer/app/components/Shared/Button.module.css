@@ -1,0 +1,20 @@
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #5A5A5A;
+    color: #F0F0F0;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+    align-items: center;
+    transition: background-color 0.3s;
+    margin: 0;
+  }
+  
+  .btn:hover {
+    align-items: center;
+    background-color: #3A3A3A;
+    color: #F0F0F0;
+  }
