@@ -10,7 +10,7 @@ export default function HeroSection() {
           
           <div className={Styles.heroImage}>
               <Image 
-                  src="/background.jpg"
+                  src="/background33.jpg"
                   alt="Punime moderne me dru"
                   layout="fill"
                   objectFit="cover"

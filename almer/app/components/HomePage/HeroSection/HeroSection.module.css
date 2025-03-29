@@ -21,7 +21,6 @@
 .futuristicText {
     font-size: 4rem;
     position: relative;
-    font-size: 4.5rem;
     font-weight: 700;
     line-height: 1.1;
     text-transform: uppercase;
@@ -52,7 +51,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: contrast(110%) brightness(0.7) saturate(130%);
+    filter: contrast(120%) brightness(0.6) saturate(130%);
     transform: scale(1.1);
     transition: transform 8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -129,8 +128,8 @@
 .gradientOverlay {
     background: linear-gradient(
         45deg,
-        rgba(10, 10, 10, 0.9) 20%,
-        rgba(10, 10, 10, 0.4) 80%
+        rgba(10, 10, 10, 0.85) 30%,
+        rgba(10, 10, 10, 0.4) 100%
     );
 }
 
@@ -194,7 +193,7 @@
 
 @media (max-width: 768px) {
     .futuristicText {
-        font-size: 2.2rem;
+        font-size: 1.6rem;
         line-height: 1.2;
         padding: 0 1rem;
     }
