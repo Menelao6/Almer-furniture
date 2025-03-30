@@ -1,65 +1,139 @@
-import React from 'react'
-import Styles from './Services.module.css'
-import Image from 'next/image'
-import Link from 'next/link'
+"use client"
+
+import React, { useState, useEffect } from 'react';
+import Styles from './Services.module.css';
+import Image from 'next/image';
+import Link from 'next/link';
+
+const servicesData = [
+    {
+        title: "Sallon",
+        icon: "/sofa.png",
+        image: "/livingServices.jpg",
+        description: "Mobilje funksionale dhe elegante për çdo hapësirë. Dizajne moderne dhe klasike të personalizuara për ju.",
+        link: "/services"
+    },
+    {
+        title: "Kuzhine",
+        icon: "/sink.png",
+        image: "/kitchenServices.jpg",
+        description: "Kuzhina të ndërtuara me material cilësor dhe dizajn unik. Optimizim i hapësirës për komoditet maksimal.",
+        link: "/services"
+    },
+    {
+        title: "Dhoma Gjumi",
+        icon: "/bed.png",
+        image: "/bedServices.jpg",
+        description: "Krijoni një ambient relaksues dhe të ngrohtë për gjumin tuaj. Mobilje të personalizuara për rehati dhe stil.",
+        link: "/services"
+    },
+    {
+        title: "Dyer Dritare",
+        icon: "/door.png",
+        image: "/doorServices.jpg",
+        description: "Dyer druri dhe alumini me cilësi të lartë. Dizajn modern me siguri dhe izolim maksimal.",
+        link: "/services"
+    }
+];
 
 export default function Services() {
-  return (
-    <main className={Styles.services}>
-        <div className={Styles.servicesContainer}>
-            <div className={Styles.servicesHeader}>
-                <h1>Sherbimet Tona</h1>
-            </div>
-            <div className={Styles.servicesContent}>
-                <div className={Styles.servicesCard}>
-                    <Image src="/sofa.png" alt="Service 1" width={100} height={100} className={Styles.servicesImage}/>
-                    <h2>Sallon</h2>
-                </div>
-                <div className={Styles.servicesCard}>
-                    <Image src="/sink.png" alt="Service 2" width={100} height={100} className={Styles.servicesImage}/>
-                    <h2>Kuzhine</h2>
-                </div>
-                <div className={Styles.servicesCard}>
-                    <Image src="/bed.png" alt="Service 3" width={100} height={100} className={Styles.servicesImage}/>
-                    <h2>Dhoma Gjumi</h2>
-                </div>
-                <div className={Styles.servicesCard}>
-                    <Image src="/door.png" alt="Service 4" width={100} height={100} className={Styles.servicesImage}/>
-                    <h2>Dyer Dritare</h2>
-                </div>
-            </div>
-            <div className={Styles.servicesContentHover}>
-                <div className={Styles.servicesCardHover}>
-                    <Image src="/livingServices.jpg" alt="Service 1" width={300} height={200} className={Styles.servicesImage}/>
-                    <h2>Sallon</h2>
-                    <p>Mobilje funksionale dhe elegante për çdo hapësirë.</p>
-                    <p>Dizajne moderne dhe klasike të personalizuara për ju.</p>
-                    <Link href={"/services"} className={Styles.servicesButton}>Shiko me shume</Link>
-                </div>
-                <div className={Styles.servicesCardHover}>
-                    <Image src="/kitchenServices.jpg" alt="Service 2" width={300} height={200} className={Styles.servicesImage}/>
-                    <h2>Kuzhine</h2>
-                    <p>Kuzhina të ndërtuara me material cilësor dhe dizajn unik.</p>
-                    <p>Optimizim i hapësirës për komoditet maksimal.</p>
-                    <Link href={"/services"} className={Styles.servicesButton}>Shiko me shume</Link>
-                </div>
-                <div className={Styles.servicesCardHover}>
-                    <Image src="/bedServices.jpg" alt="Service 3" width={300} height={200} className={Styles.servicesImage}/>
-                    <h2>Dhoma Gjumi</h2>
-                    <p>Krijoni një ambient relaksues dhe të ngrohtë për gjumin tuaj.</p>
-                    <p>Mobilje të personalizuara për rehati dhe stil.</p>
-                    <Link href={"/services"} className={Styles.servicesButton}>Shiko me shume</Link>
-                </div>
-                <div className={Styles.servicesCardHover}>
-                    <Image src="/doorServices.jpg" alt="Service 4" width={300} height={200} className={Styles.servicesImage}/>
-                    <h2>Dyer Dritare</h2>
-                    <p>Dyer druri dhe alumini me cilësi të lartë.</p>
-                    <p>Dizajn modern me siguri dhe izolim maksimal.</p>
-                    <Link href={"/services"} className={Styles.servicesButton}>Shiko me shume</Link>
-                </div>
-            </div>
-        </div>
-    </main>
+    const [activeCard, setActiveCard] = useState(null);
+    const [isMobile, setIsMobile] = useState(false);
 
-  )
+    useEffect(() => {
+        // Client-side check
+        setIsMobile(window.innerWidth <= 768);
+        
+        const handleClickOutside = (e) => {
+            if (isMobile && !e.target.closest(`.${Styles.servicesCard}`)) {
+                setActiveCard(null);
+            }
+        };
+
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        window.addEventListener('resize', handleResize);
+        document.addEventListener('click', handleClickOutside);
+        
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            document.removeEventListener('click', handleClickOutside);
+        };
+    }, [isMobile]);
+
+    const handleCardClick = (index) => {
+        if (isMobile) {
+            setActiveCard(activeCard === index ? null : index);
+        }
+    };
+
+    return (
+        <section className={Styles.services} id="services">
+            <div className={Styles.servicesContainer}>
+                <div className={Styles.servicesHeader}>
+                    <h1>Sherbimet Tona</h1>
+                </div>
+                
+                <div className={Styles.servicesContent}>
+                    {servicesData.map((service, index) => (
+                        <article 
+                            key={index}
+                            className={`${Styles.servicesCard} ${activeCard === index ? Styles.active : ''}`}
+                            onClick={() => handleCardClick(index)}
+                            role="button"
+                            tabIndex={0}
+                            aria-label={`Shiko detajet për ${service.title}`}
+                        >
+                            <div className={Styles.cardFront}>
+                                <Image 
+                                    src={service.icon}
+                                    alt={service.title}
+                                    width={100}
+                                    height={100}
+                                    className={Styles.serviceIcon}
+                                />
+                                <h2>{service.title}</h2>
+                                {isMobile && (
+                                    <span className={Styles.mobileIndicator}>🞃</span>
+                                )}
+                            </div>
+
+                            <div className={Styles.cardBack}>
+                                <Image 
+                                    src={service.image}
+                                    alt={service.title}
+                                    fill
+                                    className={Styles.cardImage}
+                                    priority
+                                />
+                                <div className={Styles.cardContent}>
+                                    <h2>{service.title}</h2>
+                                    <p className={Styles.cardDescription}>{service.description}</p>
+                                    <Link 
+    href={service.link} 
+    passHref
+    legacyBehavior
+>
+    <a 
+        className={Styles.servicesButton}
+        onClick={(e) => {
+            e.stopPropagation();
+            if (isMobile) {
+                setActiveCard(null);
+            }
+        }}
+    >
+        Shiko më shumë
+    </a>
+</Link>
+                                </div>
+                            </div>
+                        </article>
+                    ))}
+                </div>
+            </div>
+        </section>
+    )
 }
