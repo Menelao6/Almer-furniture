@@ -1,16 +1,35 @@
 "use client"
 
-import React from 'react'
 import Styles from './Navbar.module.css'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function Navbar() {
+
     const [isNavOpen, setIsNavOpen] = useState(false);
     const toggleNav = () => setIsNavOpen(!isNavOpen);
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
+    const [visible, setVisible] = useState(true);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollPos = window.pageYOffset;
+            const isScrollingDown = currentScrollPos > prevScrollPos;
+            
+            if (currentScrollPos > 500 && isScrollingDown) {
+                setVisible(false);
+            } else {
+                setVisible(true);
+            }
+            
+            setPrevScrollPos(currentScrollPos);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [prevScrollPos]);
   return (
-    <div className={Styles.navbar}>
+    <div className={`${Styles.navbar} ${visible ? Styles.visible : Styles.hidden}`}>
         <div className={Styles.logo}>
             <Link href="/">
                 <img src="/Designer.png" alt="Logo" width={150} height={50} />
