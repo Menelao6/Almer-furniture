@@ -2,125 +2,84 @@
 .footer {
     background: #4A3B34;
     color: #F5EFE6;
-    padding: 4rem 2rem;
-    border-top: 2px solid #C4A484;
-}
-
-.footerContent {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.brandSection {
+    padding: 3rem 1rem;
     text-align: center;
-    margin-bottom: 3rem;
-}
-
-.logo {
-    font-size: 2.5rem;
+  }
+  
+  .branding {
+    margin-bottom: 2rem;
+  }
+  
+  .companyName {
+    font-size: 2rem;
     color: #C4A484;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     font-family: 'Playfair Display', serif;
-}
-
-.tagline {
+  }
+  
+  .tagline {
     font-size: 1.1rem;
     letter-spacing: 1px;
-}
-
-.footerGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-.footerColumn {
-    text-align: center;
-    padding: 1rem;
-}
-
-.columnTitle {
-    color: #C4A484;
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    position: relative;
-    padding-bottom: 0.5rem;
-}
-
-.columnTitle::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 2px;
-    background: #C4A484;
-}
-
-.contactItem {
+    opacity: 0.9;
+  }
+  
+  .footerContent {
+    max-width: 1200px;
+    margin: 0 auto 2rem;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    margin: 1rem 0;
-    font-size: 1.1rem;
-}
-
-.contactIcon {
-    width: 24px;
-    height: 24px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .footerColumn {
+    flex: 1;
+    min-width: 200px;
+    padding: 1rem;
+  }
+  
+  .footerColumn h4 {
     color: #C4A484;
-}
-
-.socialLinks {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+  
+  .socialLinks {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
-    margin-top: 1rem;
-}
-
-.socialIcon {
-    width: 32px;
-    height: 32px;
-    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+  }
+  
+  .socialLink {
     color: #F5EFE6;
-}
-
-.socialLink:hover .socialIcon {
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .socialLink:hover {
     color: #C4A484;
-    transform: translateY(-3px);
-}
-
-.copyright {
-    text-align: center;
+  }
+  
+  .copyright {
     padding-top: 2rem;
     border-top: 1px solid rgba(196, 164, 132, 0.3);
-    margin-top: 2rem;
     font-size: 0.9rem;
-}
-
-/* Mobile Styles */
-@media (max-width: 768px) {
-    .footerGrid {
-        grid-template-columns: 1fr;
+    opacity: 0.8;
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .footerContent {
+      flex-direction: column;
+      gap: 1.5rem;
     }
-
+    
     .footerColumn {
-        padding: 1.5rem 0;
+      min-width: 100%;
     }
-
-    .logo {
-        font-size: 2rem;
+  
+    .companyName {
+      font-size: 1.8rem;
     }
-
-    .tagline {
-        font-size: 1rem;
-    }
-
-    .contactItem {
-        flex-direction: column;
-        text-align: center;
-    }
-}
+  }
