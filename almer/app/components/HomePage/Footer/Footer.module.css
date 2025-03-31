@@ -1,0 +1,126 @@
+/* Footer.module.css */
+.footer {
+    background: #4A3B34;
+    color: #F5EFE6;
+    padding: 4rem 2rem;
+    border-top: 2px solid #C4A484;
+}
+
+.footerContent {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.brandSection {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: #C4A484;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.footerGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footerColumn {
+    text-align: center;
+    padding: 1rem;
+}
+
+.columnTitle {
+    color: #C4A484;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.columnTitle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: #C4A484;
+}
+
+.contactItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    font-size: 1.1rem;
+}
+
+.contactIcon {
+    width: 24px;
+    height: 24px;
+    color: #C4A484;
+}
+
+.socialLinks {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.socialIcon {
+    width: 32px;
+    height: 32px;
+    transition: all 0.3s ease;
+    color: #F5EFE6;
+}
+
+.socialLink:hover .socialIcon {
+    color: #C4A484;
+    transform: translateY(-3px);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(196, 164, 132, 0.3);
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .footerGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .footerColumn {
+        padding: 1.5rem 0;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .contactItem {
+        flex-direction: column;
+        text-align: center;
+    }
+}
