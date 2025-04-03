@@ -14,14 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: {
-    default: 'Almer - Punime Artizanale me Dru',
-    template: '%s | Almer'
-  },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1.0,
-  }
+  manifest: '/site.webmanifest',
+  title: "Alme",
+  description: "Almer - Punime Artizanale me Dru",
 };
 
 export default function RootLayout({ children }) {
