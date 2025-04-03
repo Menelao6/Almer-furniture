@@ -96,7 +96,7 @@ export default function Services() {
                                 />
                                 <h2>{service.title}</h2>
                                 {isMobile && (
-                                    <span className={Styles.mobileIndicator}>🞃</span>
+                                    <div className={Styles.mobileIndicator}></div>
                                 )}
                             </div>
 
