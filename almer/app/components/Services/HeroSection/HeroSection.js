@@ -65,15 +65,8 @@ export default function HeroSection() {
           Krijime unike në dru për shtëpi dhe ambiente komerciale
         </p>
       </div>
-
-      <div className={Styles.controlsContainer}>
-        <button 
-          className={Styles.controlButton}
-          onClick={() => setShowVideo(!showVideo)}
-        >
-          {showVideo ? 'Mbyll Video' : 'Shiko Video'}
-        </button>
-      </div>
+      {/* Hero Button in case it is needed in the future */}
+      {/*} <div className={Styles.controlsContainer}> <button className={Styles.controlButton} onClick={() => setShowVideo(!showVideo)} >  {showVideo ? 'Mbyll Video' : 'Shiko Video'} </button> </div> */}
     </section>
   )
 }

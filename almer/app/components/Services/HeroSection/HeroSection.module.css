@@ -1,12 +1,11 @@
 :root {
   --primary: #C4A484;
   --secondary: #4A3B34;
-  --background: #0A0A0A;
+  --background: #F5EFE6;
   --text: #F5EFE6;
 }
 
 .heroSection {
-  position: relative;
   height: 100vh;
   overflow: hidden;
   background: var(--background);
@@ -60,21 +59,23 @@
   text-align: center;
   z-index: 4;
   padding: 2rem;
-  background: rgba(10, 10, 10, 0.8);
+  background: rgba(245, 239, 230, 0.85);
   backdrop-filter: blur(10px);
   border-radius: 16px;
+  border: 1px solid rgba(196, 164, 132, 0.2);
 }
 
 .contentTitle {
   font-size: clamp(2rem, 6vw, 3.5rem);
-  color: var(--primary);
+  color: #4A3B34;
+  text-shadow: 0 2px 4px rgba(74, 59, 52, 0.1);
   line-height: 1.1;
   margin-bottom: 1rem;
 }
 
 .contentSubtitle {
   font-size: clamp(1rem, 2vw, 1.2rem);
-  color: rgba(245, 239, 230, 0.9);
+  color: #6b5e57;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.5;
@@ -105,7 +106,7 @@
 }
 
 .swiper-pagination-bullet {
-  background: var(--text) !important;
+  background: #4A3B34 !important;
   opacity: 0.5 !important;
 }
 
@@ -114,13 +115,35 @@
   opacity: 1 !important;
 }
 
+.swiper-slide {
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Video wrapper adjustments */
+.videoWrapper {
+  background: var(--background);
+}
+
+.videoPlayer {
+  object-position: center 25%;
+}
+
 @media (max-width: 768px) {
   .slideImage {
     object-position: center 30%;
   }
   
   .contentOverlay {
-    padding: 1.5rem;
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .contentTitle {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+  
+  .slideImage {
+    object-position: center center;
   }
   
   .controlButton {
