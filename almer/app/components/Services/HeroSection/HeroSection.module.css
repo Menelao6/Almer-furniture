@@ -106,13 +106,17 @@
 }
 
 .swiper-pagination-bullet {
-  background: #4A3B34 !important;
-  opacity: 0.5 !important;
+  background: #D3C5B8 !important;
+  opacity: 1 !important;
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease;
 }
 
 .swiper-pagination-bullet-active {
-  background: var(--primary) !important;
-  opacity: 1 !important;
+  background: #C4A484 !important;
+  width: 25px;
+  border-radius: 8px;
 }
 
 .swiper-slide {

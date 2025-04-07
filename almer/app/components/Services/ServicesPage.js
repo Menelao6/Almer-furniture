@@ -5,6 +5,8 @@ import Navbar from '../Navbar/Navbar.js'
 import Footer from '../HomePage/Footer/Footer.js'
 import CustomizationJourney from './CustomizationJourney/CustomizationJourney.js'
 import ServiceSpecializations from './ServiceSpecialization/ServiceSpecializations.js'
+import Testimonials from './Testimonials/Testimonials.js'
+import Showcase from './Showcase/Showcase.js'
 
 export default function ServicesPage() {
   return (
@@ -13,6 +15,8 @@ export default function ServicesPage() {
       <HeroSection />
       <CustomizationJourney />
       <ServiceSpecializations />
+      <Testimonials />
+      <Showcase />
       <Footer />
     </div>
   )
