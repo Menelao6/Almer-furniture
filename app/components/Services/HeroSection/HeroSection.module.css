@@ -1,0 +1,152 @@
+
+
+.heroSection {
+  height: 100vh;
+  overflow: hidden;
+  background: var(--background);
+}
+
+.mediaContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiperSlide {
+  position: relative;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.slideImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+}
+
+.videoPlayer {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contentOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 1200px;
+  text-align: center;
+  z-index: 4;
+  padding: 2rem;
+  background: rgba(245, 239, 230, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(196, 164, 132, 0.2);
+}
+
+.contentTitle {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: #4A3B34;
+  text-shadow: 0 2px 4px rgba(74, 59, 52, 0.1);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.contentSubtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #6b5e57;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.controlsContainer {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+.controlButton {
+  padding: 12px 24px;
+  background: var(--primary);
+  border: none;
+  border-radius: 30px;
+  color: var(--text);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.controlButton:hover {
+  background: #B08F69;
+  transform: translateY(-2px);
+}
+
+.swiper-pagination-bullet {
+  background: #D3C5B8 !important;
+  opacity: 1 !important;
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background: #C4A484 !important;
+  width: 25px;
+  border-radius: 8px;
+}
+
+.swiper-slide {
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Video wrapper adjustments */
+.videoWrapper {
+  background: var(--background);
+}
+
+.videoPlayer {
+  object-position: center 25%;
+}
+
+@media (max-width: 768px) {
+  .slideImage {
+    object-position: center 30%;
+  }
+  
+  .contentOverlay {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .contentTitle {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+  
+  .slideImage {
+    object-position: center center;
+  }
+  
+  .controlButton {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
