@@ -1,4 +1,0 @@
-# public/robots.txt
-User-agent: *
-Allow: /
-Sitemap: https://www.almer.al/sitemap.xml
