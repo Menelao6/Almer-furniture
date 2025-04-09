@@ -1,0 +1,123 @@
+.section {
+  padding: 4rem 1rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: #4A3B34;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #6B5E57;
+  font-size: 1.1rem;
+}
+
+.swiper {
+  padding: 1rem 0 3rem;
+}
+
+.slide {
+  height: auto;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(74, 59, 52, 0.08);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.imageContainer {
+  position: relative;
+  height: 200px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.projectTag {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background: rgba(245, 239, 230, 0.9);
+  color: #4A3B34;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+}
+
+.content {
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+
+.quoteIcon {
+  width: 32px;
+  height: 32px;
+  fill: #C4A484;
+  margin-bottom: 1rem;
+}
+
+.text {
+  color: #4A3B34;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.author {
+  color: #6B5E57;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* Pagination */
+.swiper-pagination-bullet {
+  background: #D3C5B8 !important;
+  opacity: 1 !important;
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background: #C4A484 !important;
+  width: 25px;
+  border-radius: 8px;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .swiper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .card {
+    margin: 0 0.5rem;
+  }
+
+  .imageContainer {
+    height: 150px;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  .text {
+    font-size: 0.9rem;
+  }
+}
