@@ -10,10 +10,11 @@ export default function HeroSection() {
           
           <div className={Styles.heroImage}>
               <Image 
-                  src="/background33.jpg"
+                  src="/background33.webp"
                   alt="Punime moderne me dru"
-                  layout="fill"
+                  layout='fill'
                   objectFit="cover"
+                  decoding='async'
                   quality={100}
                   priority
               />

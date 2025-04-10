@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   manifest: '/site.webmanifest',
-  title: "Alme",
+  title: "Almer",
   description: "Almer - Punime Artizanale me Dru",
 };
 

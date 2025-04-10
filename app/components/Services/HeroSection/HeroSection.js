@@ -31,6 +31,10 @@ export default function HeroSection() {
             autoplay={{ delay: 5000, disableOnInteraction: false }}
             pagination={{ clickable: true }}
             className={Styles.swiper}
+            slidesPerView={1.1} 
+            keyboard={{ enabled: true }} 
+            a11y={{ enabled: true }} 
+            preventInteractionOnTransition={true}
           >
             {(isMobile ? images.mobile : images.desktop).map((img, index) => (
               <SwiperSlide key={index} className={Styles.swiperSlide}>

@@ -1,0 +1,116 @@
+.calculator {
+    background: #F5EFE6;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin: 2rem auto;
+    max-width: 800px;
+  }
+  
+  .formGroup {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Changed from element selector to class selector */
+  .formLabel {
+    display: block;
+    color: #4A3B34;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  /* Changed from element selectors to class selectors */
+  .selectField, 
+  .inputField {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #C4A484;
+    border-radius: 8px;
+    background: white;
+  }
+  
+  .dimensions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 40px;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  
+  .materialOptions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.5rem;
+  }
+  
+  .materialBtn {
+    background: white;
+    border: 2px solid #C4A484;
+    padding: 0.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .materialBtn.active {
+    background: #C4A484;
+    color: white;
+  }
+  
+  .result {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    margin: 2rem 0;
+  }
+  
+  .price {
+    color: #4A3B34;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+  }
+  
+  .locationBtns {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .locationBtn {
+    flex: 1;
+    padding: 0.8rem;
+    border: 2px solid #C4A484;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .locationBtn.active {
+    background: #C4A484;
+    color: white;
+    border-color: #4A3B34;
+  }
+  
+  .ctaButton {
+    background: #4A3B34;
+    color: white;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .dimensions {
+      grid-template-columns: 1fr;
+    }
+    
+    .inputField {
+      width: 100%;
+    }
+    
+    .materialOptions {
+      grid-template-columns: 1fr;
+    }
+  }
