@@ -11,28 +11,28 @@ const servicesData = [
         icon: "/sofa.png",
         image: "/livingServices.jpg",
         description: "Mobilje funksionale dhe elegante për çdo hapësirë. Dizajne moderne dhe klasike të personalizuara për ju.",
-        link: "/services"
+        link: "/products"
     },
     {
         title: "Kuzhine",
         icon: "/sink.png",
         image: "/kitchenServices.jpg",
         description: "Kuzhina të ndërtuara me material cilësor dhe dizajn unik. Optimizim i hapësirës për komoditet maksimal.",
-        link: "/services"
+        link: "/products"
     },
     {
         title: "Dhoma Gjumi",
         icon: "/bed.png",
         image: "/bedServices.jpg",
         description: "Krijoni një ambient relaksues dhe të ngrohtë për gjumin tuaj. Mobilje të personalizuara për rehati dhe stil.",
-        link: "/services"
+        link: "/products"
     },
     {
         title: "Dyer Dritare",
         icon: "/door.png",
         image: "/doorServices.jpg",
         description: "Dyer druri dhe alumini me cilësi të lartë. Dizajn modern me siguri dhe izolim maksimal.",
-        link: "/services"
+        link: "/products"
     }
 ];
 

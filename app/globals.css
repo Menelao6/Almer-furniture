@@ -5,6 +5,9 @@
     --secondary: #4A3B34;
     --background: #F5EFE6;
     --text: #F5EFE6;
+    --card-padding: 1.5rem;
+    --input-border: 2px solid #C4A484;
+    --shadow-default: 0 4px 12px rgba(74, 59, 52, 0.08);
 }
 
 @theme inline {

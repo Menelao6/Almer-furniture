@@ -34,7 +34,7 @@ export default function HeroSection() {
                   Për ambiente elegante dhe moderne
               </p>
               
-              <Link href="/produktet">
+              <Link href="/products">
                   <button className={Styles.ctaButton}>
                       Shiko Projektet
                   </button>

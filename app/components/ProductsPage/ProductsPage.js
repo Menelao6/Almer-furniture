@@ -1,15 +1,26 @@
 'use client';
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 import { categories } from './data/productsData';
 import Styles from './ProductsPage.module.css';
 import CategoryTabs from './CategoryTabs/CategoryTabs.js';
 import ProductCarousel from './ProductCarousel/ProductCarousel';
 import RequestForm from './RequestForm/RequestForm';
 import ValueProps from './ValueProps/ValueProps';
+import PriceCalculator from './PriceCalculator/PriceCalculator.js';
 
 export default function ProductsPage() {
   const [selectedCategory, setSelectedCategory] = useState(0);
   const [showForm, setShowForm] = useState(false);
+
+  const PriceCalculator = dynamic(
+    () => import('./PriceCalculator/PriceCalculator.js'),
+    { 
+      loading: () => <p>Duke ngarkuar...</p>,
+      ssr: false
+    }
+  );
+  
 
   return (
     <div className={Styles.container}>
@@ -43,6 +54,7 @@ export default function ProductsPage() {
       ))}
 
       {showForm && <RequestForm onClose={() => setShowForm(false)} />}
+        <PriceCalculator />
     </div>
   )
 }

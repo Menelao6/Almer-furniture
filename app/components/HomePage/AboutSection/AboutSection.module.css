@@ -1,0 +1,105 @@
+.section {
+    padding: 4rem 1rem;
+    background: #F5EFE6;
+  }
+  
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .title {
+    text-align: center;
+    color: #4A3B34;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 2rem;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    min-height: 400px;
+  }
+  
+  .textContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .leadText {
+    color: #4A3B34;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 500px;
+  }
+  
+  .highlights {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .highlightItem {
+    background: rgba(196, 164, 132, 0.1);
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+  }
+  
+  .highlightNumber {
+    color: #C4A484;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+  
+  .highlightText {
+    color: #4A3B34;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+  
+  .description {
+    color: #6B5E57;
+    line-height: 1.6;
+    max-width: 500px;
+  }
+  
+  .imageWrapper {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  
+  .image {
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .imageOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(74, 59, 52, 0.1), transparent);
+  }
+  
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+    
+    .imageWrapper {
+      height: 300px;
+      order: -1;
+    }
+    
+    .leadText {
+      font-size: 1.1rem;
+    }
+  }
