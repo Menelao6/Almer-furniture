@@ -139,7 +139,7 @@ export default function ContactForm() {
 
               {submitted && (
                 <div className={styles.successMessage}>
-                  Mesazhi u dërgua me sukses! Do t'ju kontaktojmë shpejt.
+                  Mesazhi u dërgua me sukses! Do t&apos; ju kontaktojmë shpejt.
                 </div>
               )}
             </form>
