@@ -1,0 +1,249 @@
+/* components/ContactForm/ContactForm.module.css */
+.contactSection {
+    background: var(--background);
+    min-height: 100vh;
+    padding: 4rem 1rem;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .sectionTitle {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .contactGrid {
+    display: grid;
+    gap: 2rem;
+  }
+  
+  @media (min-width: 1024px) {
+    .contactGrid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .formWrapper {
+    background: white;
+    border-radius: 15px;
+    padding: var(--card-padding);
+    box-shadow: var(--shadow-default);
+    border: 1px solid rgba(74, 59, 52, 0.1);
+  }
+  
+  .contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .formRow {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .formRow {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .formLabel {
+    font-weight: 600;
+    color: var(--secondary);
+    font-size: 0.95rem;
+  }
+  
+  .formInput,
+  .formSelect,
+  .formTextarea {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    border: var(--input-border);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: transparent;
+    transition: all 0.3s ease;
+    color: var(--secondary);
+  }
+  
+  .formInput:focus,
+  .formSelect:focus,
+  .formTextarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(196, 164, 132, 0.2);
+    border-color: var(--primary);
+  }
+  
+  .formTextarea {
+    resize: vertical;
+    min-height: 140px;
+  }
+  
+  .submitButton {
+    background: var(--primary);
+    color: var(--text);
+    padding: 1.1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .submitButton:hover {
+    background: #B08F6E;
+    transform: translateY(-1px);
+  }
+  
+  .submitButton:disabled {
+    background: #D3C5B8;
+    cursor: not-allowed;
+  }
+  
+  .successMessage {
+    background: #EDF7ED;
+    color: #2B662D;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    border: 1px solid #B2D8B2;
+  }
+  
+  .infoWrapper {
+    background: var(--secondary);
+    border-radius: 15px;
+    padding: var(--card-padding);
+    box-shadow: var(--shadow-default);
+  }
+  
+  .infoContent {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  
+  .infoTitle {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    position: relative;
+    padding-left: 2rem;
+  }
+  
+  .infoTitle::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.2rem;
+    height: 2px;
+    background: var(--primary);
+  }
+  
+  .contactInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  
+  .contactItem {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.05rem;
+    color: var(--background);
+  }
+  
+  .contactIcon {
+    font-size: 1.4rem;
+    color: var(--primary);
+  }
+  
+  .socialIcons {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .socialLink {
+    font-size: 1.8rem;
+    color: var(--background);
+    transition: color 0.3s ease;
+  }
+  
+  .socialLink:hover {
+    color: var(--primary);
+  }
+  
+  .workingHours {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    color: var(--background);
+  }
+  
+  .socialBlock,
+  .hoursBlock {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(196, 164, 132, 0.2);
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .contactSection {
+      padding: 3rem 1rem;
+    }
+    
+    .sectionTitle {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .formWrapper {
+      padding: 1.5rem;
+    }
+    
+    .infoWrapper {
+      padding: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .contactSection {
+      padding: 2rem 1rem;
+    }
+    
+    .sectionTitle {
+      font-size: 1.8rem;
+    }
+    
+    .formRow {
+      grid-template-columns: 1fr;
+    }
+    
+    .infoTitle {
+      font-size: 1.2rem;
+    }
+    
+    .contactItem {
+      font-size: 1rem;
+    }
+  }

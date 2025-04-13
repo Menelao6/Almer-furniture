@@ -27,6 +27,17 @@
     border: 2px solid #C4A484;
     border-radius: 8px;
     background: white;
+    transition: all 0.3s ease;
+  }
+
+  .inputField:focus {
+    border-color: #4A3B34;
+    outline: none;
+  }
+  
+  .inputField.error {
+    border-color: #ff4444;
+    animation: shake 0.5s;
   }
   
   .dimensions {
@@ -114,6 +125,42 @@
     padding: 1rem;
     border-radius: 30px;
     font-size: 1.1rem;
+  }
+
+  .dimensionGroup {
+    display: grid;
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  .dimensionInput {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .dimensionLabel {
+    color: #4A3B34;
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+
+  .materialOptions {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  
+  .materialPrice {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+  }
+  
+
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(5px); }
+    50% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
   }
   
   @media (max-width: 768px) {
