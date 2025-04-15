@@ -32,7 +32,7 @@ export default function Navbar() {
     <div className={`${Styles.navbar} ${visible ? Styles.visible : Styles.hidden}`}>
         <div className={Styles.logo}>
             <Link href="/">
-                <img src="/Designer.png" alt="Logo" width={150} height={50} />
+                <img src="/logo1.png" alt="Logo" width={150} height={50} />
             </Link>
         </div>
         <button className={Styles.menuButton} onClick={toggleNav}>
