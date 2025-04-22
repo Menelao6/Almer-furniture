@@ -1,0 +1,263 @@
+.gallerySection {
+    padding: 4rem 2rem;
+    background: var(--background);
+    position: relative;
+    margin-top: 80px;
+  }
+  
+  .gradientOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      45deg,
+      rgba(245, 239, 230, 0.9) 30%,
+      rgba(245, 239, 230, 0.4) 100%
+    );
+    z-index: 1;
+  }
+  
+  .galleryHero {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .galleryTitle {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+  }
+  
+  .gallerySubtitle {
+    font-size: 1.2rem;
+    color: var(--secondary);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+  
+  .categoryFilters {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+    z-index: 2;
+    position: relative;
+  }
+  
+  .filterButton {
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--primary);
+    background: transparent;
+    color: var(--primary);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .filterButton.active {
+    background: var(--primary);
+    color: var(--text);
+  }
+  
+  .galleryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .galleryItem {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow-default);
+    transition: transform 0.3s ease;
+  }
+  
+  .imageContainer {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+  }
+  
+  .galleryImage {
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .imageOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.6) 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .categoryTag {
+    color: white;
+    background: var(--primary);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+  }
+  
+  .galleryItem:hover {
+    transform: translateY(-5px);
+  }
+  
+  .galleryItem:hover .imageOverlay {
+    opacity: 1;
+  }
+  
+  .galleryItem:hover .galleryImage {
+    transform: scale(1.05);
+  }
+  
+  .loadMore {
+    text-align: center;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .loadButton {
+    background: linear-gradient(145deg, var(--primary) 0%, var(--secondary) 100%);
+    color: var(--text);
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+  }
+  
+  .loadButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 59, 52, 0.2);
+  }
+
+  .lightboxOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(74, 59, 52, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .lightboxContent {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    height: 90vh;
+    background: var(--background);
+    border-radius: 15px;
+    padding: 2rem;
+  }
+  
+  .closeButton {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--primary);
+    color: var(--text);
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  
+  .closeButton:hover {
+    transform: rotate(90deg);
+    background: var(--secondary);
+  }
+  
+  .lightboxImageContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+  }
+  
+  .lightboxImage {
+    object-fit: contain;
+    border-radius: 10px;
+  }
+  
+  /* Load More Button Adjustment */
+  .loadMore {
+    margin-top: 3rem;
+    text-align: center;
+  }
+  
+  .loadButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .galleryTitle {
+      font-size: 2rem;
+    }
+    
+    .gallerySubtitle {
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+    
+    .galleryGrid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .filterButton {
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    .lightboxContent {
+      width: 95%;
+      height: 80vh;
+      padding: 1rem;
+    }
+    
+    .closeButton {
+      width: 35px;
+      height: 35px;
+      font-size: 1.2rem;
+    }
+  }

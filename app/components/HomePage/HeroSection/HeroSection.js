@@ -29,17 +29,23 @@ export default function HeroSection() {
               <div className={Styles.neonLine} />
               
               <p className={Styles.subtitle}>
-                  Punime artizanale me dru dhe alumin
-                  <br />
-                  Për ambiente elegante dhe moderne
+                  <span>Punime artizanale me dru dhe alumin</span>
+                  <span>Për ambiente elegante dhe moderne</span>
               </p>
               
-              <Link href="/products">
-                  <button className={Styles.ctaButton}>
-                      Shiko Projektet
-                  </button>
-              </Link>
+              <div className={Styles.buttonGroup}>
+                  <Link href="/services" passHref>
+                      <button className={`${Styles.ctaButton} ${Styles.secondary}`} aria-label="Eksploro Shërbimet">
+                          Eksploro Shërbimet
+                      </button>
+                  </Link>
+                  <Link href="/products" passHref>
+                      <button className={Styles.ctaButton} aria-label="Shiko Projektet">
+                          Shiko Projektet
+                      </button>
+                  </Link>
+              </div>
           </div>
       </section>
     )
-  }
+}

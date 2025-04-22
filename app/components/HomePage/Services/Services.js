@@ -11,28 +11,28 @@ const servicesData = [
         icon: "/sofa.png",
         image: "/livingServices.jpg",
         description: "Mobilje funksionale dhe elegante për çdo hapësirë. Dizajne moderne dhe klasike të personalizuara për ju.",
-        link: "/products"
+        link: "/products?category=sallon"
     },
     {
         title: "Kuzhine",
         icon: "/sink.png",
         image: "/kitchenServices.jpg",
         description: "Kuzhina të ndërtuara me material cilësor dhe dizajn unik. Optimizim i hapësirës për komoditet maksimal.",
-        link: "/products"
+        link: "/products?category=kitchen"
     },
     {
         title: "Dhoma Gjumi",
         icon: "/bed.png",
         image: "/bedServices.jpg",
         description: "Krijoni një ambient relaksues dhe të ngrohtë për gjumin tuaj. Mobilje të personalizuara për rehati dhe stil.",
-        link: "/products"
+        link: "/products?category=bedroom"
     },
     {
         title: "Dyer Dritare",
         icon: "/door.png",
         image: "/doorServices.jpg",
         description: "Dyer druri dhe alumini me cilësi të lartë. Dizajn modern me siguri dhe izolim maksimal.",
-        link: "/products"
+        link: "/products?category=doors-windows"
     }
 ];
 
@@ -41,8 +41,8 @@ export default function Services() {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
-        // Client-side check
-        setIsMobile(window.innerWidth <= 768);
+        const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+        checkMobile();
         
         const handleClickOutside = (e) => {
             if (isMobile && !e.target.closest(`.${Styles.servicesCard}`)) {
@@ -51,7 +51,8 @@ export default function Services() {
         };
 
         const handleResize = () => {
-            setIsMobile(window.innerWidth <= 768);
+            checkMobile();
+            if (!isMobile) setActiveCard(null);
         };
 
         window.addEventListener('resize', handleResize);
@@ -73,7 +74,7 @@ export default function Services() {
         <section className={Styles.services} id="services">
             <div className={Styles.servicesContainer}>
                 <div className={Styles.servicesHeader}>
-                    <h1>Sherbimet Tona</h1>
+                    <h1>Shërbimet Tona</h1>
                 </div>
                 
                 <div className={Styles.servicesContent}>
@@ -85,6 +86,7 @@ export default function Services() {
                             role="button"
                             tabIndex={0}
                             aria-label={`Shiko detajet për ${service.title}`}
+                            aria-expanded={activeCard === index}
                         >
                             <div className={Styles.cardFront}>
                                 <Image 
@@ -111,27 +113,31 @@ export default function Services() {
                                 <div className={Styles.cardContent}>
                                     <h2>{service.title}</h2>
                                     <p className={Styles.cardDescription}>{service.description}</p>
-                                    <Link 
-    href={service.link} 
-    passHref
-    legacyBehavior
->
-    <a 
-        className={Styles.servicesButton}
-        onClick={(e) => {
-            e.stopPropagation();
-            if (isMobile) {
-                setActiveCard(null);
-            }
-        }}
-    >
-        Shiko më shumë
-    </a>
-</Link>
+                                    <Link
+                                        href={service.link}
+                                        className={Styles.servicesButton}
+                                        onClick={(e) => e.stopPropagation()}
+                                    >
+                                        Shiko Produktet
+                                    </Link>
                                 </div>
                             </div>
                         </article>
                     ))}
+                </div>
+
+                {/* New CTA Section */}
+                <div className={Styles.ctaSection}>
+                    <h3 className={Styles.ctaTitle}>Kërkoni Zgjidhje Të Personalizuara?</h3>
+                    <p className={Styles.ctaText}>Eksploroni koleksionin tonë të plotë ose konsultohuni me ekspertët tanë</p>
+                    <div className={Styles.ctaButtons}>
+                        <Link href="/products" className={Styles.ctaButtonPrimary}>
+                            Shiko Të Gjitha Produktet
+                        </Link>
+                        <Link href="/contact" className={Styles.ctaButtonSecondary}>
+                            Kërko Konsultim Falas
+                        </Link>
+                    </div>
                 </div>
             </div>
         </section>
