@@ -39,9 +39,9 @@ export default function HeroSection() {
                           Eksploro Shërbimet
                       </button>
                   </Link>
-                  <Link href="/products" passHref>
-                      <button className={Styles.ctaButton} aria-label="Shiko Projektet">
-                          Shiko Projektet
+                  <Link href="/gallery" passHref>
+                      <button className={Styles.ctaButton} aria-label="Shiko Galerin">
+                          Shiko Galerinë
                       </button>
                   </Link>
               </div>

@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: #C3B7A6;
+    background: var(--background);
     margin-top: 80px;
 }
 
@@ -126,29 +126,24 @@
 }
 
 .gradientOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: linear-gradient(
         45deg,
-        rgba(10, 10, 10, 0.85) 30%,
-        rgba(10, 10, 10, 0.4) 100%
+        rgba(196, 164, 132, 0.1) 30%,
+        rgba(245, 239, 230, 0.3) 100%
     );
+    z-index: 1;
 }
 
 /* Second Button Styles */
 .ctaButton.secondary {
-    background: linear-gradient(145deg, #C4A484 0%, #4A3B34 100%);
-    color: #4A3B34;
-    padding: 1.2rem 2.5rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: 50px;
-    cursor: pointer;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-top: 2rem;
-    position: relative;
-    padding-left: 3;
+    background: transparent;
+    border: 2px solid var(--primary);
+    backdrop-filter: blur(5px);
 }
 
 .ctaButton.secondary::before {
@@ -165,7 +160,6 @@
         transparent
     );
     transition: 0.4s ease;
-    z-index: 1;
 }
 
 .ctaButton.secondary:hover::before {
@@ -194,22 +188,31 @@
     }
 }
 
+.buttonGroup {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
 /*Button Styles */
 .ctaButton {
     position: relative;
-    background: linear-gradient(145deg, #C4A484 0%, #4A3B34 100%);
+    background: linear-gradient(145deg, var(--primary) 0%, var(--secondary) 100%);
     border: none;
     padding: 1.2rem 2.5rem;
-    color: white;
+    color: var(--text);
     font-size: 1.1rem;
     font-weight: 600;
     border-radius: 50px;
     cursor: pointer;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    margin-top: 2rem;
+    min-width: 260px;
+    text-align: center;
 }
 
 .ctaButton::before {
@@ -233,8 +236,8 @@
 }
 
 .ctaButton:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 @media (max-width: 768px) {
