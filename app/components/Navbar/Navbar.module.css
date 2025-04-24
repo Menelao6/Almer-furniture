@@ -50,7 +50,7 @@
     text-decoration: none;
     color: var(--secondary);
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     padding: 0.5rem 0;
     transition: all 0.3s ease;
 }
@@ -142,7 +142,7 @@
     }
 
     .navLink {
-        font-size: 1.2rem;
+        font-size: 0.9rem;
         padding: 1rem;
     }
 
