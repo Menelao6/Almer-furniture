@@ -1,6 +1,6 @@
 // src/components/SEO/SEO.js
 import Head from 'next/head';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/naviagation';
 
 const SEO = ({ 
   title, 
