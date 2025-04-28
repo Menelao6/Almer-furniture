@@ -141,7 +141,7 @@
     text-align: center;
     margin-top: 4rem;
     padding: 3rem 2rem;
-    background: rgba(196, 164, 132, 0.08);
+    background: #fff;
     border-radius: 15px;
     border: 2px solid var(--primary);
 }
