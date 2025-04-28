@@ -107,6 +107,7 @@ export default function Services() {
                                     src={service.image}
                                     alt={service.title}
                                     fill
+                                    sizes='100%'
                                     className={Styles.cardImage}
                                     priority
                                 />

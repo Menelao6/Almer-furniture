@@ -47,11 +47,11 @@ export default function Highlights() {
                           <Image 
                               src={highlight.image} 
                               alt={highlight.title}
-                              width={600}  // Added explicit dimensions
+                              width={600}
                               height={400}
                               className={Styles.highlightImage}
                               sizes="(max-width: 768px) 100vw, 50vw"
-                              priority={index < 2} // Prioritize first 2 images
+                              priority={index < 2}
                           />
                           <div className={Styles.imageOverlay}></div>
                       </div>
