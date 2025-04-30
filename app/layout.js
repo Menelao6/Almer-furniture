@@ -24,7 +24,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <SEO />
+      <SEO
+        title="Mobileri Kuzhine - Dizajn dhe Instalim në Tiranë | Almer"
+        description="Kuzhina të personalizuara me cilësi të lartë. 25+ vjet përvojë në prodhimin e mobiljeve për kuzhina në Tiranë."
+        keywords="kuzhina me porosi, mobilje ne tirane, dizajn kuzhinesh"
+      />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
       </head>
       <body

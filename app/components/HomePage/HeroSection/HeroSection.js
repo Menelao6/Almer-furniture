@@ -12,7 +12,7 @@ export default function HeroSection() {
               <Image 
                   src="/background33.webp"
                   alt="Punime moderne me dru"
-                    fill
+                  fill
                   decoding='async'
                   quality={100}
                   priority
